@@ -5,6 +5,7 @@ function App() {
   const [expression, setExpression] = useState("");
   const [result, setResult] = useState("");
   const [powerOn, setPowerOn] = useState(true);
+  const [activeBtn, setActiveBtn] = useState(null);
 
   let isVisible = true;
   function power() {
@@ -18,6 +19,7 @@ function App() {
   function handleClick(value) {
     if (!powerOn) return;
     setExpression((prev) => prev + value);
+    setActiveBtn(value);
   }
   function handleDel() {
     if (!powerOn) return;
@@ -77,15 +79,27 @@ function App() {
           <div className="flex mt-5 text-center w-full justify-center font-extrabold">
             <div className="-me-9 mt-2">
               <h4>CSS</h4>
-              <img src="/public/img/css.png" className="w-[90px] " alt="" />
+              <img
+                src={`${import.meta.env.BASE_URL}img/css.png`}
+                alt="CSS"
+                className="w-[90px]"
+              />
             </div>
             <div className="z-10">
               <h4>HTML</h4>
-              <img src="/public/img/html.png" className="w-[100px] " alt="" />
+              <img
+                src={`${import.meta.env.BASE_URL}img/html.png`}
+                className="w-[100px] "
+                alt=""
+              />
             </div>
             <div className="-ms-7 z-2 mt-3">
               <h4>JS</h4>
-              <img src="/public/img/js.png" className="w-[80px] " alt="" />
+              <img
+                src={`${import.meta.env.BASE_URL}img/js.png`}
+                className="w-[80px] "
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -143,7 +157,9 @@ function App() {
               <div className="flex mb-5  justify-center gap-5">
                 {[9, 8, 7].map((num) => (
                   <button
-                    className="calc-buttons"
+                    className={`calc-buttons ${
+                      activeBtn === num.toString() ? "active" : ""
+                    }`}
                     key={num}
                     onClick={() => {
                       handleClick(num.toString());
@@ -153,7 +169,9 @@ function App() {
                   </button>
                 ))}
                 <button
-                  className="calc-buttons"
+                  className={`calc-buttons ${
+                    activeBtn === "*" ? "active" : ""
+                  }`}
                   onClick={() => {
                     handleClick("*");
                   }}
@@ -164,7 +182,9 @@ function App() {
               <div className="flex mb-5  justify-center gap-5">
                 {[6, 5, 4].map((num) => (
                   <button
-                    className="calc-buttons"
+                    className={`calc-buttons ${
+                      activeBtn === num.toString() ? "active" : ""
+                    }`}
                     key={num}
                     onClick={() => {
                       handleClick(num.toString());
@@ -174,7 +194,9 @@ function App() {
                   </button>
                 ))}
                 <button
-                  className="calc-buttons"
+                  className={`calc-buttons ${
+                    activeBtn === "-" ? "active" : ""
+                  }`}
                   onClick={() => {
                     handleClick("-");
                   }}
@@ -185,7 +207,9 @@ function App() {
               <div className="flex mb-5  justify-center gap-5">
                 {[3, 2, 1].map((num) => (
                   <button
-                    className="calc-buttons"
+                    className={`calc-buttons ${
+                      activeBtn === num.toString() ? "active" : ""
+                    }`}
                     key={num}
                     onClick={() => {
                       handleClick(num.toString());
@@ -195,7 +219,9 @@ function App() {
                   </button>
                 ))}
                 <button
-                  className="calc-buttons"
+                  className={`calc-buttons ${
+                    activeBtn === "+" ? "active" : ""
+                  }`}
                   onClick={() => {
                     handleClick("+");
                   }}
@@ -205,7 +231,9 @@ function App() {
               </div>
               <div className="flex mb-1  justify-center gap-5">
                 <button
-                  className="bg-[#CE3E5C]  sp-buttons hover:bg-[#fc4166] "
+                  className={`bg-[#CE3E5C]  sp-buttons hover:bg-[#fc4166]  ${
+                    activeBtn === "+" ? "active" : ""
+                  }`}
                   onClick={() => {
                     handleDel();
                   }}
@@ -213,7 +241,9 @@ function App() {
                   DEL
                 </button>
                 <button
-                  className="calc-buttons"
+                  className={`calc-buttons ${
+                    activeBtn === "0" ? "active" : ""
+                  }`}
                   onClick={() => {
                     handleClick("0");
                   }}
@@ -221,7 +251,9 @@ function App() {
                   0
                 </button>
                 <button
-                  className="calc-buttons"
+                  className={`calc-buttons ${
+                    activeBtn === "." ? "active" : ""
+                  }`}
                   onClick={() => {
                     handleClick(".");
                   }}
@@ -229,7 +261,9 @@ function App() {
                   .
                 </button>
                 <button
-                  className="calc-buttons"
+                  className={`calc-buttons ${
+                    activeBtn === "=" ? "active" : ""
+                  }`}
                   onClick={() => {
                     handleEqual();
                   }}

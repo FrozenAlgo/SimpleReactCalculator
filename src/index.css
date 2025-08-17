@@ -2,10 +2,10 @@
 
 @layer components{
   .calc-buttons{
-    @apply px-5 py-3 rounded shadow-white shadow-md hover:bg-[#6f47be] bg-[#4D377A] cursor-pointer 
-  }
+    @apply px-5 py-3 rounded shadow-white shadow-md hover:bg-[#6f47be] bg-[#4D377A] cursor-pointer active:brightness-200
+  } 
   .sp-buttons{
-    @apply px-4 p-3 cursor-pointer rounded shadow-white shadow-md
+    @apply px-4 p-3 cursor-pointer rounded shadow-white shadow-md active:brightness-200
   }
 }
 
