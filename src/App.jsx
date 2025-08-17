@@ -67,11 +67,13 @@ function App() {
 
   return (
     <>
-      <div className="bg-[#ECEEFA] min-h-screen w-screen items-center flex flex-col lg:flex-row justify-evenly    ">
-        <div className="text text-[#3A1F5E] text-center lg:text-start">
+      <div className="bg-[#ECEEFA] min-h-screen w-screen items-center flex flex-col lg:flex-row justify-evenly  lg:py-0 py-20 ">
+        <div className="text text-[#3A1F5E] text-start  sm:text-center py-8 sm:py-12 lg:py-0 lg:text-start">
           <div>
-            <h1 className="font-extrabold text-6xl mb-1">Simple</h1>
-            <h2 className="font-extrabold text-6xl mb-1">Calculator</h2>
+            <h1 className="font-extrabold text-5xl md:text-6xl mb-1">Simple</h1>
+            <h2 className="font-extrabold text-5xl md:text-6xl mb-1">
+              Calculator
+            </h2>
             <p className="text-[#5E4985] text-3xl font-bold">
               using Javascript
             </p>
