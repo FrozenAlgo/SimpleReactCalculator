@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer components{
+  .calc-buttons{
+    @apply px-5 py-3 rounded shadow-white shadow-md hover:bg-[#6f47be] bg-[#4D377A] cursor-pointer 
+  }
+  .sp-buttons{
+    @apply px-4 p-3 cursor-pointer rounded shadow-white shadow-md
+  }
+}
+
